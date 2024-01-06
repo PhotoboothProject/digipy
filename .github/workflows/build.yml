@@ -28,7 +28,7 @@ jobs:
       - run: pip install -r dev.txt
       - run: make
       - run: ./dist/${{ matrix.binary }} version
-      - run: tar czf ./dist/digipy-${{ matrix.os }}.tar.gz dist/${{ matrix.binary }}
+      - run: tar czf digipy-${{ matrix.os }}.tar.gz -C dist ${{ matrix.binary }}
 
       - uses: svenstaro/upload-release-action@v2
         with:
