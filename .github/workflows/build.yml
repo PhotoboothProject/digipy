@@ -25,6 +25,10 @@ jobs:
       - run: pip install -r dev.txt
       - run: make
       - run: ./dist/digipy version
-      - uses: actions/upload-artifact@v4
+
+      - uses: svenstaro/upload-release-action@v2
         with:
-          path: dist/*
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: dist/*
+          asset_name: ${{ matrix.os }}-binary
+          tag: ${{ github.ref }}
