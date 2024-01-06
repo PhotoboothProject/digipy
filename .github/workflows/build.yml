@@ -33,5 +33,5 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: dist/digipy-${{ matrix.os }}.tar.gz
-          asset_name: ${{ matrix.os }}-binary
+          asset_name: digipy-${{ matrix.os }}.tar.gz
           tag: ${{ github.ref }}
