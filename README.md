@@ -76,7 +76,7 @@ Changes in the requirements go into the [requirements.in](./requirements.in) fil
 pip-compile -U requirements.in
 
 # don't forget dev.in
-pip-compile -U requirements.in
+pip-compile -U dev.in
 
 # then sync the new deps to your env
 pip-sync dev.txt
