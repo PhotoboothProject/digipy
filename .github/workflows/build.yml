@@ -34,3 +34,4 @@ jobs:
           file: dist/*
           asset_name: ${{ matrix.os }}-binary
           tag: ${{ github.ref }}
+          file_glob: true
