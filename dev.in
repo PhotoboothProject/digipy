@@ -2,3 +2,4 @@
 
 neovim
 pip-tools
+pyinstaller

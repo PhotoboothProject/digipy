@@ -58,3 +58,30 @@ digipy slc capture %s
 # Before photo command
 digipy cmd LiveViewWnd_Show
 ```
+
+## Development
+
+If you want to contribute to this project, then you can run the following commands to get the required environment:
+
+```bash
+python3 -m venv venv
+source ./venv/bin/activate
+pip3 install -r dev.txt
+```
+
+Changes in the requirements go into the [requirements.in](./requirements.in) file and can be compiled with
+
+```bash
+# create new requirements.txt and update deps
+pip-compile -U requirements.in
+
+# don't forget dev.in
+pip-compile -U requirements.in
+
+# then sync the new deps to your env
+pip-sync dev.txt
+```
+
+## LICENSE
+
+[MIT](./LICENSE)

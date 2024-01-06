@@ -4,6 +4,8 @@
 #
 #    pip-compile dev.in
 #
+altgraph==0.17.4
+    # via pyinstaller
 build==1.0.3
     # via pip-tools
 certifi==2023.11.17
@@ -21,9 +23,16 @@ msgpack==1.0.7
 neovim==0.3.1
     # via -r dev.in
 packaging==23.2
-    # via build
+    # via
+    #   build
+    #   pyinstaller
+    #   pyinstaller-hooks-contrib
 pip-tools==7.3.0
     # via -r dev.in
+pyinstaller==6.3.0
+    # via -r dev.in
+pyinstaller-hooks-contrib==2023.12
+    # via pyinstaller
 pynvim==0.5.0
     # via neovim
 pyproject-hooks==1.0.0
