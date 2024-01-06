@@ -27,11 +27,11 @@ jobs:
       - run: pip install -r dev.txt
       - run: make
       - run: ./dist/digipy version
+      - run: tar czf ./dist/digipy-${{ matrix.os }}-${{ github.ref }}.tar.gz dist/digipy --remove-files
 
       - uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: dist/*
+          file: dist/digipy-${{ matrix.os }}-${{ github.ref }}.tar.gz
           asset_name: ${{ matrix.os }}-binary
           tag: ${{ github.ref }}
-          file_glob: true
