@@ -1,4 +1,5 @@
 ---
+name: Build artifacts
 on:
   push:
     tags:
