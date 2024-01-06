@@ -49,14 +49,14 @@ digipy slc capture c:\foo.jpg
 Adjust the commands in your photobooth setup to this:
 
 ```bash
-# Before photo command
+# Before photo command: Start Liveview
 digipy cmd LiveViewWnd_Show
 
 # Capture command
 digipy slc capture %s
 
-# Before photo command
-digipy cmd LiveViewWnd_Show
+# After photo command: Hide Liveview
+digipy cmd LiveViewWnd_Hide
 ```
 
 ## Development
