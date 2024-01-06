@@ -18,8 +18,6 @@ jobs:
             binary: digipy.exe
           - os: ubuntu-latest
             binary: digipy
-          - os: macos-latest
-            binary: digipy.app
 
     steps:
       - uses: actions/checkout@v4
