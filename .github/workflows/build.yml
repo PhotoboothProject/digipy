@@ -13,10 +13,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os:
-          - windows-latest
-          - ubuntu-latest
-          - macos-latest
+        include:
+          - os: windows-latest
+            binary: digipy.exe
+          - os: ubuntu-latest
+            binary: digipy
+          - os: macos-latest
+            binary: digipy.app
 
     steps:
       - uses: actions/checkout@v4
@@ -26,8 +29,8 @@ jobs:
 
       - run: pip install -r dev.txt
       - run: make
-      - run: ./dist/digipy version
-      - run: tar czf ./dist/digipy-${{ matrix.os }}.tar.gz dist/digipy --remove-files
+      - run: ./dist/${{ matrix.binary }} version
+      - run: tar czf ./dist/digipy-${{ matrix.os }}.tar.gz dist/${{ matrix.binary }}
 
       - uses: svenstaro/upload-release-action@v2
         with:
