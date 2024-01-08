@@ -31,6 +31,9 @@ The cmd or slc command you want to use.
 
 And the parameters you want to use.
 
+And of cause a running digicamcontrol instance with the webserver
+listening on port **5513**.
+
 ### Examples
 
 ```bash
@@ -58,6 +61,15 @@ digipy slc capture %s
 # After photo command: Hide Liveview
 digipy cmd LiveViewWnd_Hide
 ```
+
+## Configuration
+
+You can change the host with the `DIGIPY_HOST` and the port
+with the `DIGIPY_PORT` env variable.
+
+For example:
+
+`DIGIPY_PORT=9999 digipy slc capture %s`
 
 ## Development
 
